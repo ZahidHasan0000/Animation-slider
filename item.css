@@ -1,0 +1,183 @@
+.logo {
+  /* max-width: 100%; */
+  width: 100vw;
+  display: inline-block;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow content */
+  background-image: linear-gradient(
+      rgba(249, 206, 139, 0.9),
+      rgba(249, 206, 139, 0.9)
+    ),
+    url("//honeybeeherb.com/cdn/shop/t/126/assets/pattern-hbh.svg?v=123718139924958964461709998520");
+  
+  background-repeat: repeat;
+  background-size: 4%;
+  background-position: 0 0;
+  animation: slideBackground 50s linear infinite;
+}
+
+
+@keyframes slideBackground {
+  0% {
+    background-position: 0rem 0rem;
+  }
+  100% {
+    background-position: 200rem 200rem;
+  }
+}
+
+.logo:hover .logo__inner:hover {
+  animation-play-state: paused;
+}
+
+.logo__inner {
+  /* padding-block: 1rem; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.logo__inner li svg{
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    /* max-width: 100%; */
+
+    background-image: linear-gradient(
+        rgba(249, 206, 139, 0.9),
+        rgba(249, 206, 139, 0.9)
+      ),
+      url("//honeybeeherb.com/cdn/shop/t/126/assets/pattern-hbh.svg?v=123718139924958964461709998520");
+    background-repeat: repeat;
+    background-size: 18%;
+    background-position: 0 0;
+    animation: slideBackground 50s linear infinite;
+  }
+
+  @keyframes slideBackground {
+    0% {
+      background-position: 0rem 0rem;
+    }
+    100% {
+      background-position: 100rem 100rem;
+    }
+  }
+
+  .logo__inner {
+    /* padding-block: 1rem; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .logo__inner li {
+    font-size: 30px;
+    
+  }
+}
+
+.logo[data-animated="true"] {
+  overflow: hidden;
+}
+
+.logo[data-animated="true"] .logo__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 30s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.logo[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.logo[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.logo[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.logo[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% + 1rem));
+  }
+}
+
+.icon {
+  align-items: center;
+  display: flex;
+}
+
+:root {
+  /* --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%); */
+  /* --clr-primary-800: hsl(217, 70%, 46%); */
+  --clr-primary-800: hsl(0, 0%, 100%);
+  /* --clr-primary-900: hsl(218, 33%, 9%); */
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  display: grid;
+  min-block-size: 100vh;
+  place-content: center;
+  font-family: system-ui;
+  font-size: 2.125rem;
+  background-color: var(--clr-primary-800);
+}
+
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  color: red;
+  font-weight: bold;
+  /* width: 100vw */
+}
+
+@media (max-width: 768px) {
+  .logo[data-animated="true"] .logo__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 30s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+
+  .logo[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  .logo[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  .logo[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+
+  .logo[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 5rem));
+    }
+  }
+}
